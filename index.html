@@ -179,42 +179,24 @@
         function pop_PriorityPopulationSB353_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Centract</th>\
+                        <th scope="row">Tract ID</th>\
                         <td>' + (feature.properties['Centract'] !== null ? autolinker.link(feature.properties['Centract'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['display'] !== null ? autolinker.link(feature.properties['display'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
+                        <th scope="row">Disadvantaged Community</th>\
                         <td colspan="2">' + (feature.properties['DAC'] !== null ? autolinker.link(feature.properties['DAC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">LowIncome</th>\
+                        <th scope="row">Low-Income Community</th>\
                         <td>' + (feature.properties['LowIncome'] !== null ? autolinker.link(feature.properties['LowIncome'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nondesignated</th>\
-                        <td>' + (feature.properties['Nondesignated'] !== null ? autolinker.link(feature.properties['Nondesignated'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">BufferLowIncome</th>\
+                        <th scope="row">Low-income Communities within 1/2 mile of Disadvantaged Communities</th>\
                         <td>' + (feature.properties['BufferLowIncome'] !== null ? autolinker.link(feature.properties['BufferLowIncome'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">BufferLIH</th>\
+                        <th scope="row">Low-income Households within 1/2 mile of Disadvantaged Communities</th>\
                         <td>' + (feature.properties['BufferLIH'] !== null ? autolinker.link(feature.properties['BufferLIH'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Length'] !== null ? autolinker.link(feature.properties['Shape_Length'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -230,9 +212,9 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .55,
-                fillColor: 'rgba(108,33,103,1.0)',
-                interactive: false,
+                fillOpacity: .5,
+                fillColor: 'rgba(127,60,141,1.0)',
+                interactive: true,
             }
         }
         map.createPane('pane_PriorityPopulationSB353_2');
@@ -525,8 +507,8 @@
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
-                fillOpacity: .55,
-                fillColor: 'rgba(0,147,146,1.0)',
+                fillOpacity: .5,
+                fillColor: 'rgba(0,134,149,1.0)',
                 interactive: false,
             }
         }
@@ -571,12 +553,12 @@
         function style_Cities_4_0() {
             return {
                 pane: 'pane_Cities_4',
-                opacity: .9,
-                color: 'rgba(13,60,97,.80)',
+                opacity: 1,
+                color: 'rgba(102,102,102,1)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: .90,
+                weight: .8,
                 fillOpacity: 0,
                 interactive: false,
             }
@@ -653,7 +635,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/SantaClaraCounty_5.png" /> Santa Clara County': layer_SantaClaraCounty_5,'<img src="legend/Cities_4.png" /> Cities': layer_Cities_4,'<img src="legend/Justice40_3.png" /> Justice 40': layer_Justice40_3,'<img src="legend/PriorityPopulationSB353_2.png" /> Priority Population (SB 353)': layer_PriorityPopulationSB353_2,'<img src="legend/SVCETerritory_1.png" /> SVCE Territory': layer_SVCETerritory_1,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Justice40_3.png" /> Justice 40 (DOT)': layer_Justice40_3,'<img src="legend/PriorityPopulationSB353_2.png" /> Priority Population (SB 353)': layer_PriorityPopulationSB353_2,'<img src="legend/Cities_4.png" /> Cities': layer_Cities_4,'<img src="legend/SVCETerritory_1.png" /> SVCE Territory': layer_SVCETerritory_1,'<img src="legend/SantaClaraCounty_5.png" /> Santa Clara County': layer_SantaClaraCounty_5,"Base Map": layer_BaseMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
