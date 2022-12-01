@@ -2,7 +2,7 @@
 
 This is a map of priority populations and Justice 40 communities in Silicon Valley Clean Energy territory. 
 
-Last edited: 11/15/22
+Last edited: 11/31/22
 
 Data Sources:
 Justice 40 - Climate and Social Justice Screening Tool 1.0 (Updated Nov 22, 2022)
